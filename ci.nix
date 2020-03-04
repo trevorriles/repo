@@ -1,5 +1,5 @@
 let
   default = import ./default.nix {};
 in {
-  inherit (default) trevorriles;
+  inherit (default) sample-flask;
 }
