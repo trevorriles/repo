@@ -1,9 +1,10 @@
 let 
   sources = import ./nix/sources.nix;
-  pkgs = import sources.nixpkgs { };
   customPkgs = self: super: {
     # local projects
-    trevorriles = {};
+    trevorriles = {
+      sample-flask = import ./services/sample-flask/default.nix { pkgs = self; };
+    };
     # external repos
     reference-api = import sources.reference-api { pkgs = self; };
   };
